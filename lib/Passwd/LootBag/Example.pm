@@ -1,4 +1,4 @@
-package PASSWD::LootBag::Example;
+package Passwd::LootBag::Example;
 use Mojo::Base 'Mojolicious::Controller';
 
 # This action will render a template

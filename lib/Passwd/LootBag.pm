@@ -1,4 +1,4 @@
-package PASSWD::LootBag;
+package Passwd::LootBag;
 use Mojo::Base 'Mojolicious';
 
 # This method will run once at server start
