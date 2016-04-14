@@ -7,7 +7,7 @@ class Passwd::LootBag::Tests::BagAPI extends Test::Class::Moose {
 
     use HTTP::Status qw(:constants);
 
-    use Passwd::LootBag::Controller::Bag;
+    use Passwd::LootBag::Model::Bag;
 
     use constant APP_CLASS => 'Passwd::LootBag';
 

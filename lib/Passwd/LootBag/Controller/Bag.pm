@@ -1,8 +1,6 @@
 use Moops;
 
 class Passwd::LootBag::Controller::Bag extends Mojolicious::Controller {
-    use Passwd::LootBag::Model::Bag;
-
     method get() {
         my ($ID) = $self->param('id');
 
