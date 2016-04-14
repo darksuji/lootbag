@@ -8,7 +8,7 @@ sub startup {
     # Router
     my $r = $self->routes;
 
-    $r->get('/api/v0/bag/:id')->to(controller => 'Bag', action => 'get');
+    $r->get('/api/v0/bag/:id')->to(controller => 'Controller::Bag', action => 'get');
 }
 
 1;

@@ -1,6 +1,6 @@
 use Moops;
 
-class Passwd::LootBag::Bag extends Mojolicious::Controller {
+class Passwd::LootBag::Controller::Bag extends Mojolicious::Controller {
     my @items;
 
     method get() {
