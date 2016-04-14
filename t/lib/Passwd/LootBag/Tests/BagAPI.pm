@@ -7,6 +7,8 @@ class Passwd::LootBag::Tests::BagAPI extends Test::Class::Moose {
 
     use HTTP::Status qw(:constants);
 
+    use Passwd::LootBag::Bag;
+
     use constant APP_CLASS => 'Passwd::LootBag';
 
     has tester => (is => 'rwp');
@@ -26,11 +28,15 @@ class Passwd::LootBag::Tests::BagAPI extends Test::Class::Moose {
         my $t = $self->tester->get_ok('/api/v0/bag/1');
 
         $t->status_is(HTTP_OK);
-        $t->json_is( {} );
+        $t->json_is(
+            {
+                items => []
+            }
+        );
     }
 
     method _make_empty_bag() {
-
+        Passwd::LootBag::Bag->empty_bag();
     }
 
     method test_bag_with_one_item($report) {
@@ -49,9 +55,11 @@ class Passwd::LootBag::Tests::BagAPI extends Test::Class::Moose {
     }
 
     method _make_bag_with_one_item() {
-        my $bag = $self->_make_empty_bag();
+        $self->_make_empty_bag();
 
-        return $bag;
+        Passwd::LootBag::Bag->add_item('/api/v0/items/1');
+
+        return;
     }
 }
 
