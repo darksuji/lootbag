@@ -41,7 +41,7 @@ class Passwd::TestsFor::LootBag::Controller::Bag extends Test::Class::Moose {
 
         $bag->mock(
             stash => sub {
-                my ($self, $which, $new_val) = @_;
+                my ($self, $which) = @_;
 
                 my $stash = {
                     bag_model => $bag_model,
